@@ -27,7 +27,7 @@ int main(){
         cout<<"Introduzca el sexo: ";
         cin>>sex;
         
-        getIMC(height,wheight,sex);
+        getIMC(height,wheight,);
 
         if(sex='m'){    
             if(imc < 20){
