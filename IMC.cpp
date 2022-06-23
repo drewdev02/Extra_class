@@ -1,6 +1,5 @@
 #include<iostream>
 #include<math.h>
-#include<conio.h>
 using namespace std;
 
 float height, wheight, imc;
@@ -56,6 +55,5 @@ int main(){
             }
         }
     }
-getch();1q
 return 0;
 }
