@@ -13,7 +13,7 @@ float getIMC (float height, float weight){
 int main(){
     int ppl;
     char sex;
-    string name[ppl]={};
+    string name[ppl];
     cout<<"Cantidad de personas a analizar: ";
     cin>>ppl; 
 
@@ -27,7 +27,7 @@ int main(){
         cout<<"Introduzca el sexo: ";
         cin>>sex;
         
-        getIMC(height,wheight);
+        getIMC(height,wheight,sex);
 
         if(sex='m'){    
             if(imc < 20){
