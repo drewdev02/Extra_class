@@ -50,6 +50,7 @@ int main(){
     cout<<"Cantidad de personas a analizar: ";
     cin>>ppl;
     name = new string [ppl];
+    int imcArray[ppl];
     //iteracion de todas las personas a evaluar
     for(int i=0; i<ppl; i++){
         cout<<"Nombre de la persona: ";
@@ -61,8 +62,15 @@ int main(){
         cout<<"Introduzca el sexo: ";
         cin>>sex;
         getIMC(height,wheight);
+        imcArray[i]=imc;
         cout.precision(2);
         cout<<i+1<<" ---> "<<name[i]<<" Su imc es: "<<imc<<" "<<getState(imc,sex)<<endl;
+        delete [] name;
+
     }
+    /*//mostrar imcArray
+    for(int i; i<ppl;i++){
+        cout<<imcArray[i]<<" ";
+    }*/
 return 0;
 }
