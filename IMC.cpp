@@ -45,13 +45,14 @@ string getState(float imc,char sex){
 int main(){
     int ppl;
     char sex;
-    string name[ppl];
+    string *name = NULL;
     //cuantas personas se van a evaluar
     cout<<"Cantidad de personas a analizar: ";
-    cin>>ppl; 
+    cin>>ppl;
+    name = new string [ppl];
     //iteracion de todas las personas a evaluar
     for(int i=0; i<ppl; i++){
-        cout<<"Introduzca Nombre: ";
+        cout<<"Nombre de la persona: ";
         cin>>name[i];
         cout<<"Introduzca la altura: ";
         cin>>height;
@@ -59,7 +60,9 @@ int main(){
         cin>>wheight;
         cout<<"Introduzca el sexo: ";
         cin>>sex;
-        cout<<i+1 <<name[i] <<"Su imc es: "<<getIMC(height,wheight)<< getState(getIMC(height,wheight),sex);
+        getIMC(height,wheight);
+        cout.precision(2);
+        cout<<i+1<<" ---> "<<name[i]<<" Su imc es: "<<imc<<" "<<getState(imc,sex)<<endl;
     }
 return 0;
 }
