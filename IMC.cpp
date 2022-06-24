@@ -44,28 +44,36 @@ string getState(float imc,char sex){
 }
 int main(){
     int ppl;
-    char sex;
-    string *name = NULL;
+  //  char sex;
+   // string *name = NULL;
     //cuantas personas se van a evaluar
     cout<<"Cantidad de personas a analizar: ";
     cin>>ppl;
-    name = new string [ppl];
-    int imcArray[ppl];
+   // name = new string [ppl];
+    //int imcArray[ppl];
+    // estuctura persona
+    struct persona{
+        string name;
+        float height;
+        float weight;
+        char sex;
+    }persona1;
+
     //iteracion de todas las personas a evaluar
     for(int i=0; i<ppl; i++){
         cout<<"Nombre de la persona: ";
-        cin>>name[i];
+        cin>>persona1.name;
         cout<<"Introduzca la altura: ";
-        cin>>height;
+        cin>>persona1.height;
         cout<<"Introduzca el peso: ";
-        cin>>wheight;
+        cin>>persona1.weight;
         cout<<"Introduzca el sexo: ";
-        cin>>sex;
-        getIMC(height,wheight);
-        imcArray[i]=imc;
+        cin>>persona1.sex;
+        getIMC(persona1.height,persona1.weight);
+        //imcArray[i]=imc;
         cout.precision(2);
-        cout<<i+1<<" ---> "<<name[i]<<" Su imc es: "<<imc<<" "<<getState(imc,sex)<<endl;
-        delete [] name;
+        cout<<i+1<<" ---> "<<persona1.name<<" Su imc es: "<<imc<<" "<<getState(imc,persona1.sex)<<endl;
+        //delete [] name;
 
     }
     /*//mostrar imcArray
