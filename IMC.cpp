@@ -2,13 +2,19 @@
 #include<cmath>
 #include<string>
 using namespace std;
-//variables globales
-float height, wheight, imc;
+// estuctura persona
+struct persona{
+    string name;
+    float height;
+    float weight;
+    char sex;
+    float imc;
+}persona1;
 //funcion para calcular el imc
 float getIMC (float height, float weight){
     height/=100;
-    imc=weight/pow(height,2);
-    return imc;
+    persona1.imc=weight/pow(height,2);
+    return persona1.imc;
 }
 //funcion para hallar el estado de la persona
 string getState(float imc,char sex){
@@ -44,21 +50,8 @@ string getState(float imc,char sex){
 }
 int main(){
     int ppl;
-  //  char sex;
-   // string *name = NULL;
-    //cuantas personas se van a evaluar
-    cout<<"Cantidad de personas a analizar: ";
+    cout<<"Cantidad de personas a analizar: ";//introducir el numero de personas a evaluar
     cin>>ppl;
-   // name = new string [ppl];
-    //int imcArray[ppl];
-    // estuctura persona
-    struct persona{
-        string name;
-        float height;
-        float weight;
-        char sex;
-    }persona1;
-
     //iteracion de todas las personas a evaluar
     for(int i=0; i<ppl; i++){
         cout<<"Nombre de la persona: ";
@@ -70,15 +63,15 @@ int main(){
         cout<<"Introduzca el sexo: ";
         cin>>persona1.sex;
         getIMC(persona1.height,persona1.weight);
-        //imcArray[i]=imc;
+        string imcArray[ppl]={};
+        imcArray[i]=persona1.imc;
         cout.precision(2);
-        cout<<i+1<<" ---> "<<persona1.name<<" Su imc es: "<<imc<<" "<<getState(imc,persona1.sex)<<endl;
-        //delete [] name;
+        cout<<i+1<<" ---> "<<persona1.name<<" Su imc es: "<<persona1.imc<<" "<<getState(persona1.imc,persona1.sex)<<endl;
+
 
     }
-    /*//mostrar imcArray
-    for(int i; i<ppl;i++){
-        cout<<imcArray[i]<<" ";
-    }*/
+
+
+
 return 0;
 }
