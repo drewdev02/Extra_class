@@ -48,10 +48,12 @@ string getState(float imc,char sex){
         }
     }
 }
+
 void principal(){
     int ppl;
     cout<<"Cantidad de personas a analizar: ";//introducir el numero de personas a evaluar
     cin>>ppl;
+    float arrayImc[ppl];
     //iteracion de todas las personas a evaluar
     for(int i=0; i<ppl; i++){
         cout<<"Nombre de la persona: ";
@@ -63,11 +65,27 @@ void principal(){
         cout<<"Introduzca el sexo: ";
         cin>>persona1.sex;
         getIMC(persona1.height,persona1.weight);
+        arrayImc[i]=persona1.imc;
         cout.precision(2);
         cout<<i+1<<" ---> "<<persona1.name<<" Su imc es: "<<persona1.imc<<" "<<getState(persona1.imc,persona1.sex)<<endl;
-
-
     }
+
+        int suma=0;
+        for (int i = 0; i < ppl; i++) {
+            suma+=arrayImc[i];
+        }
+        float promedio=suma/ppl;
+        cout<<"el  imc promedio es: "<<promedio<<endl;
+        int contador=0;
+        for(int i=0;i<ppl;i++){
+            if(arrayImc[i]>promedio){
+                contador++;
+            }
+        }
+        cout<<"el numero de personas con un imc mayor al promedio es: "<<contador<<endl;
+
+
+
 }
 int main(){
     principal();
