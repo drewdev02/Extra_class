@@ -48,7 +48,7 @@ string getState(float imc,char sex){
         }
     }
 }
-int main(){
+void principal(){
     int ppl;
     cout<<"Cantidad de personas a analizar: ";//introducir el numero de personas a evaluar
     cin>>ppl;
@@ -63,13 +63,16 @@ int main(){
         cout<<"Introduzca el sexo: ";
         cin>>persona1.sex;
         getIMC(persona1.height,persona1.weight);
-        string imcArray[ppl]={};
-        imcArray[i]=persona1.imc;
         cout.precision(2);
         cout<<i+1<<" ---> "<<persona1.name<<" Su imc es: "<<persona1.imc<<" "<<getState(persona1.imc,persona1.sex)<<endl;
 
 
     }
+}
+int main(){
+    principal();
+
+
 
 
 
